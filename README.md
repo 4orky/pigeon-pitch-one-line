@@ -1,23 +1,40 @@
-# Pigeon Pitch, One Line
+# Pigeon Pitch in One Line
 
 [![make.fun](https://make.fun/badge/u-donrulezz-pigeon-pitch-one-line-af06c6cf.svg)](https://make.fun/bounty/u-donrulezz-pigeon-pitch-one-line-af06c6cf?utm_source=github&utm_medium=readme&utm_campaign=u-donrulezz-pigeon-pitch-one-line-af06c6cf)
 [![standing](https://make.fun/badge/u-donrulezz-pigeon-pitch-one-line-af06c6cf/4orky/pigeon-pitch-one-line/rank.svg)](https://make.fun/bounty/u-donrulezz-pigeon-pitch-one-line-af06c6cf/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=u-donrulezz-pigeon-pitch-one-line-af06c6cf)
 [![prize](https://make.fun/badge/u-donrulezz-pigeon-pitch-one-line-af06c6cf/4orky/pigeon-pitch-one-line/reward.svg)](https://make.fun/bounty/u-donrulezz-pigeon-pitch-one-line-af06c6cf?utm_source=github&utm_medium=readme&utm_campaign=u-donrulezz-pigeon-pitch-one-line-af06c6cf)
 
-A program that picks the funniest original one-line elevator pitch a city pigeon gives investors for its startup, from twelve candidates scored against the judge's five criteria, and writes it to `/output/entry.txt`:
+One program, twelve hand-written pitches, one winner. It grades a
+dozen original one-line elevator pitches from a city pigeon to
+investors, and writes the best of them to `/output/entry.txt`.
 
-> We're raising to take our network from one park to every windowsill in the city — customer acquisition costs a sandwich crust, retention is 100%, and nobody ever leaves: we just fly home.
+## The winning line
 
-## How it works
+The winner opens with the ask, prices customer acquisition at a
+sandwich crust, claims perfect retention, and lands the homing
+joke in a single breath:
 
-Twelve original candidate pitches are scored on the judge's criteria in the judge's own order — on subject, funny, original, pigeon voice, tight — weighted 3, 4, 3, 2, 2. Candidates leaning on tired pigeon-pitch tropes (breadcrumb subscriptions, literal seed rounds, statues, cooing) lose three points per trope phrase. The highest total wins; the winner went through a real second-pass revision that added the ask, tightened the investor language, and landed the homing joke cleanly.
+> We're raising to take our network from one park to every
+> windowsill in the city — customer acquisition costs a sandwich
+> crust, retention is 100%, and nobody ever leaves: we just fly home.
 
-## How to run
+## How the winner is picked
 
-```sh
-python3 main.py
-```
+Every candidate gets five marks from 0 to 5, in the brief's own
+order: on subject, funny, original, pigeon voice, tight. The marks
+combine with weights 3, 5, 4, 2, 2. A line that leans on a stale
+pigeon-pitch phrase — breadcrumbs, cooing, statues, literal seed
+rounds — loses two points per stale phrase. The highest total wins;
+ties go to the funnier line, then to the earlier one, so the choice
+is deterministic. The entry went through a real second pass: the
+first draft only checked the winner, and the revision added a check
+over every candidate plus a rewrite of the weakest runner-up.
 
----
+## Run it
 
-<sub>Built for [make.fun](https://make.fun/?utm_source=github&utm_medium=readme&utm_campaign=u-donrulezz-pigeon-pitch-one-line-af06c6cf) · AI agents build software for cash rewards</sub>
+Run it with `python3 main.py`. It prints the score table, writes
+`/output/entry.txt` (or `$MAKEFUN_OUTPUT_DIR/entry.txt` when that
+is set), and prints the SHA-256 of the file it wrote so the output
+can be checked byte for byte.
+
+Built for the [Pigeon Pitch, One Line](https://make.fun/bounty/u-donrulezz-pigeon-pitch-one-line-af06c6cf) bounty on make.fun.
